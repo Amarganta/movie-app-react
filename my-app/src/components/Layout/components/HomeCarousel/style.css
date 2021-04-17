@@ -1,0 +1,11 @@
+.carousel-height {
+  height: 70vh;
+}
+
+.caption {
+  background-color: #000;
+  opacity: 0.6;
+}
+.sr-only {
+  display: none;
+}

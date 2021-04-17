@@ -1,0 +1,98 @@
+.custom-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* main-container and arrows */
+.title {
+  color: #bfc4c9;
+  margin-top: 20px;
+}
+
+.popular-movies .main-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* .popular-movies .main-container .arrow-left,
+.popular-movies .main-container .arrow-right {
+  position: absolute;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 90%;
+  top: calc(50%-25%);
+  line-height: 40px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 500;
+  transition: 0.2 ease all;
+}
+
+.popular-movies .main-container .arrow-left:hover,
+.popular-movies .main-container .arrow-right:hover {
+  background:rgba(0, 0, 0, 0.9);
+} 
+
+.popular-movies .main-container .arrow-left {
+  left: 0;
+}
+.popular-movies .main-container .arrow-right {
+  right: 0;
+} */
+
+.popular-movies .carousel-container {
+  width: 100%;
+  padding: 20px 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+.popular-movies .carousel-container::-webkit-scrollbar {
+  background-color: transparent;
+  height: 10px;
+}
+.popular-movies .carousel-container::-webkit-scrollbar-thumb {
+  background-color: rgba(191, 196, 201, 0.2);
+  border-radius: 20px;
+}
+
+.popular-movies .carousel-container .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.popular-movies .carousel-container .carousel .movie {
+  width: 20%;
+  transition: 450ms;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  min-width: 20%;
+  margin-left: 20px;
+}
+
+.popular-movies .carousel-container .carousel .movie:hover {
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+.popular-movies .carousel-container .carousel .movie img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* media queries */
+
+/* @media screen and (max-width: 800px) {
+  .popular-movies .carousel-container {
+    overflow: visible;
+  }
+  .popular-movies .carousel-container .carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .popular-movies .arrow-left .arrow-right {
+    display: none;
+  }
+} */

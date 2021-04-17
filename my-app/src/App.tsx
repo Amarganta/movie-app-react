@@ -1,11 +1,9 @@
 import React from "react";
-import { Layout } from "./components";
-import { Home } from "./screens";
+import { Screens } from "./screens";
 function App() {
   return (
     <>
-      <Layout />
-      <Home />
+      <Screens />
     </>
   );
 }
