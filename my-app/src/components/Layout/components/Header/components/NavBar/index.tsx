@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
+
 import "./navbar.css";
 const NavBar: FC = () => {
   return (
@@ -24,9 +26,14 @@ const NavBar: FC = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link" aria-current="page" href="#aaa">
+              <Link
+                className="nav-link"
+                aria-current="page"
+                href="#aaa"
+                to={"/"}
+              >
                 Home
-              </a>
+              </Link>
               <a className="nav-link" href="#aa">
                 Últimos Lanzamientos
               </a>

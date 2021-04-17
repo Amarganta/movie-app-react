@@ -1,12 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
+import {
+  HomeCarousel,
+  HomeRows,
+  Header,
+  Footer,
+} from "../../components/Layout/components";
+import "./styles.css";
 
-const Home = () => {
+const Home: FC = () => {
   return (
-    <div>
-      <h1>este es el Home</h1>
-      <p>#sendHelp</p>
+    <div className="home">
+      <Header />
+      <HomeCarousel />
+      <HomeRows />
+      <Footer />
     </div>
   );
 };
-
 export { Home };
