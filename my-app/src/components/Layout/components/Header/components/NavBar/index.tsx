@@ -34,9 +34,14 @@ const NavBar: FC = () => {
               >
                 Home
               </Link>
-              <a className="nav-link" href="#aa">
-                Últimos Lanzamientos
-              </a>
+              <Link
+                className="nav-link"
+                aria-current="page"
+                href="#aaa"
+                to={"/latest/1"}
+              >
+                Latest
+              </Link>
               <a className="nav-link" href="#aa">
                 Populares
               </a>

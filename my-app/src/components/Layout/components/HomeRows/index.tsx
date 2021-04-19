@@ -30,7 +30,7 @@ const HomeRows: FC<Props> = () => {
       setTopMovies(response);
     });
   }, []);
-  console.log(topMovies);
+  // console.log(topMovies);
 
   return (
     <div className="custom-background">
