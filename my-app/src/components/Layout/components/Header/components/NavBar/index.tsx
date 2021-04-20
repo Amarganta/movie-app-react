@@ -34,12 +34,22 @@ const NavBar: FC = () => {
               >
                 Home
               </Link>
-              <a className="nav-link" href="#aa">
-                Últimos Lanzamientos
-              </a>
-              <a className="nav-link" href="#aa">
-                Populares
-              </a>
+              <Link
+                className="nav-link"
+                aria-current="page"
+                href="#aaa"
+                to={"/latest/1"}
+              >
+                Latest
+              </Link>
+              <Link
+                className="nav-link"
+                aria-current="page"
+                href="#aaa"
+                to={"/popular/1"}
+              >
+                Popular
+              </Link>
               <a className="nav-link" href="#aa">
                 Buscar
               </a>

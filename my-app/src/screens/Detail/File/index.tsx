@@ -6,17 +6,17 @@ import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { video } from "../../../api";
 import "./style.css";
 import { videoType } from "../../../types/videoType";
-import { Link } from "react-router-dom";
 interface Props {
   movie: movieType;
 }
 const File: FC<Props> = ({ movie }) => {
   const [trailer, setTrailer] = useState<videoType | undefined>(undefined);
   useEffect(() => {
+    window.scrollTo(0, 74);
     video.getVideo(`${movie.id}`).then((response) => {
       setTrailer(response);
     });
-  }, []);
+  }, [movie.id]);
   console.log(trailer);
   const video_base = "https://www.youtube.com/watch?v=";
   const img = "https://image.tmdb.org/t/p/";
@@ -48,7 +48,11 @@ const File: FC<Props> = ({ movie }) => {
               <span>{movie.release_date.split("-", 1)}</span>
             </h1>
             <button>
-              <a target="_blank" href={video_base + trailer?.results[0].key}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={video_base + trailer?.results[0].key}
+              >
                 <FontAwesomeIcon icon={faPlayCircle} />
                 <span>Trailer</span>
               </a>
