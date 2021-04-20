@@ -49,12 +49,21 @@ const getLatest = async (page: number): Promise<movieType[]> => {
     `/movie/upcoming?page=${page}`
   );
   console.log(data.results);
+  console.log(page);
 
   return data.results;
 };
-getLatest(1);
+
 const getLatestData = async (): Promise<GetMoviesResponse> => {
   const { data } = await api.get<GetMoviesResponse>("/movie/upcoming");
+  console.log(data);
+
+  return data;
+};
+const getPopularData = async (): Promise<GetMoviesResponse> => {
+  const { data } = await api.get<GetMoviesResponse>("/movie/top_rated");
+  console.log(data);
+
   return data;
 };
 const getMovieById = async (id: string) => {
@@ -75,4 +84,5 @@ export const lists = {
   getMovieById,
   getNowPlaying,
   getNowPlayingData,
+  getPopularData,
 };

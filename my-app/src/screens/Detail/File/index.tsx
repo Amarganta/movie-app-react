@@ -12,6 +12,7 @@ interface Props {
 const File: FC<Props> = ({ movie }) => {
   const [trailer, setTrailer] = useState<videoType | undefined>(undefined);
   useEffect(() => {
+    window.scrollTo(0, 74);
     video.getVideo(`${movie.id}`).then((response) => {
       setTrailer(response);
     });

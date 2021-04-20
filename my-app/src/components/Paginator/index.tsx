@@ -1,24 +1,24 @@
 import React, { FC, useEffect, useState } from "react";
 import { Pagination } from "react-bootstrap";
-import { useHistory } from "react-router";
-import { GetMoviesResponse, lists } from "../../api/getMovies";
+import { GetMoviesResponse } from "../../api/getMovies";
 import "./styles.css";
 interface Props {
   pag: number;
+  onClick: Function;
+  dataSource: Function;
 }
 
-const Paginator: FC<Props> = ({ pag }) => {
+const Paginator: FC<Props> = ({ pag, onClick, dataSource }) => {
   const [saveData, setSaveData] = useState<GetMoviesResponse>();
   const [totalPages, setTotalPages] = useState<number>();
 
   const [page, setPage] = useState<number>(pag);
-  const startPaginationDefault: number = 2;
+  const startPaginationDefault: number = 1;
   const [startPagination, setStartPagination] = useState<number>(2);
   const [endPagination, setEndPagination] = useState<number>();
-  const history = useHistory();
 
   useEffect(() => {
-    lists.getLatestData().then((response) => {
+    dataSource().then((response: GetMoviesResponse) => {
       console.log(response);
       setSaveData(response);
       setTotalPages(response.total_pages);
@@ -34,34 +34,36 @@ const Paginator: FC<Props> = ({ pag }) => {
     });
   }, [page, startPagination]);
 
-  useEffect(() => {
-    history.push(`/latest/:${page}`);
-  }, [history, page]);
-
+  const handleOnClick = (page: number) => {
+    // history.push(`/latest/${page}`);
+    onClick(page);
+    setPage(page);
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="Pagination">
       {Array(saveData?.total_pages)}
       <Pagination>
         <Pagination.Prev
-          onClick={() => setPage(page! > 1 ? page! - 1 : page)}
+          onClick={() => handleOnClick(page! > 1 ? page! - 1 : page)}
         />
-        <Pagination.Item onClick={() => setPage(1)}>{1}</Pagination.Item>
+        <Pagination.Item onClick={() => handleOnClick(1)}>{1}</Pagination.Item>
         <Pagination.Ellipsis />
         {Array.from(Array(totalPages).keys())
           .slice(startPagination, endPagination)
           .map((index) => {
             return (
-              <Pagination.Item onClick={() => setPage(index)}>
+              <Pagination.Item onClick={() => handleOnClick(index)}>
                 {index}
               </Pagination.Item>
             );
           })}
         <Pagination.Ellipsis />
-        <Pagination.Item onClick={() => setPage(totalPages!)}>
+        <Pagination.Item onClick={() => handleOnClick(totalPages!)}>
           {totalPages}
         </Pagination.Item>
         <Pagination.Next
-          onClick={() => setPage(page! < totalPages! ? page! + 1 : page)}
+          onClick={() => handleOnClick(page! < totalPages! ? page! + 1 : page)}
         />
       </Pagination>
     </div>
