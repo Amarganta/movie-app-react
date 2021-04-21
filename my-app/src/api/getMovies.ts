@@ -8,8 +8,10 @@ export type GetMoviesResponse = {
   total_results: number;
 };
 
-const getPopular = async (): Promise<movieType[]> => {
-  const { data } = await api.get<GetMoviesResponse>("/movie/popular");
+const getPopular = async (page: number): Promise<movieType[]> => {
+  const { data } = await api.get<GetMoviesResponse>(
+    `/movie/popular?page=${page}`
+  );
   // console.log(data.results);
   //  array de objetos con las pelis
   // console.log(data);

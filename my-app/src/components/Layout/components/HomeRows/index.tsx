@@ -18,7 +18,7 @@ const HomeRows: FC<Props> = () => {
 
   const [movies, setMovies] = useState<movieType[]>();
   useEffect(() => {
-    lists.getPopular().then((response) => {
+    lists.getPopular(1).then((response) => {
       setMovies(response);
     });
   }, []);
