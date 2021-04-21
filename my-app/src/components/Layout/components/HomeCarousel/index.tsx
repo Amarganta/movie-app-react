@@ -10,7 +10,7 @@ interface Props {
 const HomeCarousel: FC<Props> = () => {
   const [carousel, setCarousel] = useState<movieType[]>();
   useEffect(() => {
-    lists.getPopular().then((response) => {
+    lists.getPopular(1).then((response) => {
       setCarousel(response);
     });
   }, []);
