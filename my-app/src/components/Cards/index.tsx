@@ -33,10 +33,6 @@ const Cards: FC<Props> = ({ pag, dataSource }) => {
                     : img_not_found
                 }
               />
-              <Card.Body>
-                {/* <Card.Title>{latest.title}</Card.Title>
-                <Card.Text>{latest.release_date}</Card.Text> */}
-              </Card.Body>
             </Card>
           ))}
       </div>

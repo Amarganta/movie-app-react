@@ -50,9 +50,14 @@ const NavBar: FC = () => {
               >
                 Popular
               </Link>
-              <a className="nav-link" href="#aa">
-                Buscar
-              </a>
+              <Link
+                className="nav-link"
+                aria-current="page"
+                href="#aaa"
+                to={"/search/"}
+              >
+                Search
+              </Link>
             </div>
           </div>
         </div>
