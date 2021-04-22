@@ -48,14 +48,18 @@ const File: FC<Props> = ({ movie }) => {
               <span>{movie.release_date.split("-", 1)}</span>
             </h1>
             <button>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={video_base + trailer?.results[0].key}
-              >
-                <FontAwesomeIcon icon={faPlayCircle} />
-                <span>Trailer</span>
-              </a>
+              {trailer?.results[0] ? (
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={video_base + trailer?.results[0].key!}
+                >
+                  <FontAwesomeIcon icon={faPlayCircle} />
+                  <span>Trailer</span>
+                </a>
+              ) : (
+                <span>Trailer not available</span>
+              )}
             </button>
           </div>
           <div className="content">

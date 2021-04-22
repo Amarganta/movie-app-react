@@ -3,12 +3,13 @@ import { Card, Container, InputGroup, FormControl } from "react-bootstrap";
 import { api } from "../../api";
 import { movieType } from "../../types/movieType";
 import { Layout } from "../../components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import img_not_found from "../../assets/img/not_img.png";
 import "./style.css";
 const Search: FC = () => {
   const [search, setSearch] = useState<movieType[]>();
   const [typedSearch, setTypedSearch] = useState("");
-
+  const history = useHistory();
   const getSearch = async (typedSearch: string): Promise<movieType[]> => {
     const { data } = await api.get("search/movie?query=" + typedSearch);
     console.log(data.results);
@@ -19,10 +20,11 @@ const Search: FC = () => {
   function onChange(e: ChangeEvent<HTMLInputElement>) {
     setTypedSearch(e.target.value);
     getSearch(typedSearch);
+    history.push(`/search/${e.currentTarget.value}`);
   }
 
-  const img_base = "https://image.tmdb.org/t/p/";
-  const img_size = "w500";
+  const base_img = "https://image.tmdb.org/t/p/";
+  const size_img = "w500";
 
   return (
     <Layout>
@@ -44,7 +46,13 @@ const Search: FC = () => {
                 <div className="card">
                   <Link to={`/detail/${movie.id}`}>
                     <Card className="card">
-                      <Card.Img src={img_base + img_size + movie.poster_path} />
+                      <Card.Img
+                        src={
+                          movie.poster_path
+                            ? base_img + size_img + movie.poster_path
+                            : img_not_found
+                        }
+                      />
                     </Card>
                   </Link>
                 </div>
