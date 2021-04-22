@@ -38,9 +38,9 @@ const NavBar: FC = () => {
                 className="nav-link"
                 aria-current="page"
                 href="#aaa"
-                to={"/latest/1"}
+                to={"/upcoming/1"}
               >
-                Latest
+                Upcoming
               </Link>
               <Link
                 className="nav-link"

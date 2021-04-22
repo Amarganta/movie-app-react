@@ -1,7 +1,8 @@
 import React, { FC } from "react";
+import { lists } from "../../api";
 import {
-  HomeCarousel,
-  HomeRows,
+  MovieCarousel,
+  Rows,
   Header,
   Footer,
 } from "../../components/Layout/components";
@@ -11,8 +12,9 @@ const Home: FC = () => {
   return (
     <div className="home">
       <Header />
-      <HomeCarousel />
-      <HomeRows />
+      <MovieCarousel />
+      <Rows dataSource={lists.getPopular} title={"Popular movies"} />
+      <Rows dataSource={lists.getTopRated} title={"Top Rated Movies"} />
       <Footer />
     </div>
   );

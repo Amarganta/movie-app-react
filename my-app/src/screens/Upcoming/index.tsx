@@ -4,25 +4,25 @@ import { RouteComponentProps, withRouter, useHistory } from "react-router";
 import { Layout, Cards, Paginator } from "../../components";
 import { lists } from "../../api/getMovies";
 
-const Latest: FC<RouteComponentProps<{ pag: string & number }>> = ({
+const Upcoming: FC<RouteComponentProps<{ pag: string & number }>> = ({
   match,
 }) => {
   const history = useHistory();
   const page = parseInt(match.params.pag || 1);
   const handleClick = (page: number) => {
-    history.push(`/latest/${page}`);
+    history.push(`/upcoming/${page}`);
   };
   console.log(page);
   return (
     <Layout>
-      <Cards pag={page} dataSource={lists.getLatest} />
+      <Cards pag={page} dataSource={lists.getUpcoming} />
       <Paginator
         pag={page}
         onClick={handleClick}
-        dataSource={lists.getLatestData}
+        dataSource={lists.getUpcomingtData}
       />
     </Layout>
   );
 };
 
-export default withRouter(Latest);
+export default withRouter(Upcoming);

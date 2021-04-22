@@ -1,4 +1,4 @@
 export { Header } from "./Header";
-export { HomeCarousel } from "./HomeCarousel";
-export { HomeRows } from "./HomeRows";
+export { MovieCarousel } from "./MovieCarousel";
+export { Rows } from "./Rows";
 export { Footer } from "./Footer";

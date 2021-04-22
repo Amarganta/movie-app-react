@@ -23,7 +23,7 @@ const Paginator: FC<Props> = ({ pag, onClick, dataSource }) => {
       setSaveData(response);
       setTotalPages(response.total_pages);
     });
-  }, []);
+  }, [dataSource]);
 
   useEffect(() => {
     setStartPagination(() => {
