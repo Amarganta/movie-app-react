@@ -71,7 +71,7 @@ const File: FC<Props> = ({ movie }) => {
             <ul>
               {movie.genres &&
                 movie.genres.map((genre: Genre) => {
-                  return <li>{genre.name}</li>;
+                  return <li key={movie.id}>{genre.name}</li>;
                 })}
             </ul>
           </div>

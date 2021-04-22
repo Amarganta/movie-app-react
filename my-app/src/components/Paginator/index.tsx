@@ -19,7 +19,7 @@ const Paginator: FC<Props> = ({ pag, onClick, dataSource }) => {
 
   useEffect(() => {
     dataSource().then((response: GetMoviesResponse) => {
-      console.log(response);
+      // console.log(response);
       setSaveData(response);
       setTotalPages(response.total_pages);
     });
@@ -53,7 +53,7 @@ const Paginator: FC<Props> = ({ pag, onClick, dataSource }) => {
           .slice(startPagination, endPagination)
           .map((index) => {
             return (
-              <Pagination.Item onClick={() => handleOnClick(index)}>
+              <Pagination.Item key={index} onClick={() => handleOnClick(index)}>
                 {index}
               </Pagination.Item>
             );

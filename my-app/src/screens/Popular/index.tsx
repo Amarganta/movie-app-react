@@ -12,7 +12,7 @@ const Popular: FC<RouteComponentProps<{ pag: string & number }>> = ({
   const handleClick = (page: number) => {
     history.push(`/popular/${page}`);
   };
-  console.log(page);
+  // console.log(page);
   return (
     <Layout>
       <Cards pag={page} dataSource={lists.getPopular} />

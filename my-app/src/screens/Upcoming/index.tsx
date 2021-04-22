@@ -12,7 +12,7 @@ const Upcoming: FC<RouteComponentProps<{ pag: string & number }>> = ({
   const handleClick = (page: number) => {
     history.push(`/upcoming/${page}`);
   };
-  console.log(page);
+  // console.log(page);
   return (
     <Layout>
       <Cards pag={page} dataSource={lists.getUpcoming} />
