@@ -7,7 +7,7 @@ import "./style.css";
 interface Props {
   data?: movieType;
 }
-const HomeCarousel: FC<Props> = () => {
+const MovieCarousel: FC<Props> = () => {
   const [carousel, setCarousel] = useState<movieType[]>();
   useEffect(() => {
     lists.getPopular(1).then((response) => {
@@ -43,4 +43,4 @@ const HomeCarousel: FC<Props> = () => {
   );
 };
 
-export { HomeCarousel };
+export { MovieCarousel };
