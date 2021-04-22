@@ -9,3 +9,28 @@
 .sr-only {
   display: none;
 }
+@media (min-width: 820px) and (max-width: 1024px) /* /tablets landscape/*/ {
+}
+
+@media (min-width: 480px) and (max-width: 819px) /* /tablets/ */ {
+  .caption {
+    display: none;
+  }
+
+  .carousel-height {
+    height: auto;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 480px) /*celulares*/ {
+  .caption {
+    display: none;
+  }
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    display: none;
+  }
+  .carousel-height {
+    height: auto;
+  }
+}

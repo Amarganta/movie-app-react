@@ -16,7 +16,7 @@
 .popular-movies .carousel-container {
   width: 100%;
   padding: 20px 0;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
 }
@@ -49,4 +49,18 @@
 .popular-movies .carousel-container .carousel .movie img {
   width: 100%;
   vertical-align: top;
+}
+@media (min-width: 820px) and (max-width: 1024px) /* /tablets landscape/*/ {
+}
+
+@media (min-width: 480px) and (max-width: 819px) /* /tablets/ */ {
+  .poster {
+    height: 30vh !important;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 480px) /*celulares*/ {
+  .poster {
+    height: 20vh !important;
+  }
 }
