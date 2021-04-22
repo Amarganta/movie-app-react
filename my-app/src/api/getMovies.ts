@@ -29,21 +29,21 @@ const getUpcoming = async (page: number): Promise<movieType[]> => {
   const { data } = await api.get<GetMoviesResponse>(
     `/movie/upcoming?page=${page}`
   );
-  console.log(data.results);
-  console.log(page);
+  // console.log(data.results);
+  // console.log(page);
 
   return data.results;
 };
 
 const getUpcomingtData = async (): Promise<GetMoviesResponse> => {
   const { data } = await api.get<GetMoviesResponse>("/movie/upcoming");
-  console.log(data);
+  // console.log(data);
 
   return data;
 };
 const getPopularData = async (): Promise<GetMoviesResponse> => {
   const { data } = await api.get<GetMoviesResponse>("/movie/popular");
-  console.log(data);
+  // console.log(data);
 
   return data;
 };

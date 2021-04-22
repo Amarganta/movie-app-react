@@ -84,28 +84,16 @@
 }
 
 @media (min-width: 480px) and (max-width: 819px) /*tablets*/ {
-  .poster {
-    /* background-color: red; */
-    height: 75vh;
-    width: 100%;
-  }
-
   .info {
-    /* background-color: violet; */
     width: 100%;
     padding: 10px;
     display: inline-block;
     justify-content: center;
+    align-items: center;
   }
 }
 
 @media (min-width: 200px) and (max-width: 480px) /*celulares*/ {
-  .poster {
-    /* background-color: red; */
-    height: 75vh;
-    width: 100%;
-  }
-
   .info {
     /* background-color: violet; */
     width: 100%;

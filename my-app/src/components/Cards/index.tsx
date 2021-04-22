@@ -14,7 +14,7 @@ const Cards: FC<Props> = ({ pag, dataSource }) => {
   useEffect(() => {
     dataSource(pag).then((response: movieType[]) => {
       setMovies(response);
-      console.log(response);
+      // console.log(response);
     });
   }, [dataSource, pag]);
 
